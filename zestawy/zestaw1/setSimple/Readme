@@ -1,0 +1,13 @@
+Proszę zaimplementować typ danych setSimple reprezentujący matematyczny zbiór oraz operacje które dla dwóch zbiorów A,B realizują:
+
+-   sumę zbiorów
+-   część wspólną zbiorów
+-   różnicę zbiorów
+-   sprawdzanie identyczności zbiorów
+-   wstawianie elementu
+-   usuwanie elementu
+-   sprawdzanie czy element należy do zbioru
+
+Proszę założyć, że istnieje skończona liczba N możliwych elementów.
+Dzięki takiemu założeniu implementacja każdego z rozpytywanych zbiorów może być oparta na jednowymiarowej tablicy o rozmiarze
+N, gdzie każdy index wskazuje na to czy dany element należy do rozpatrywanego zbioru czy nie.
