@@ -1,0 +1,7 @@
+Proszę zaimplementować typ danych dictionarySimple, będący uproszczoną wersją zbioru, posiadającą jedynie trzy operacje:
+
+-   wstawianie
+-   usuwanie
+-   sprawdzanie, czy element należy do zbioru
+
+Tym razem w zbiorze przechowywane będą ciągi znaków o długości 50. W implementacji proszę wykorzystać jednowymiarową tablicę, której elementy są ciągami znaków. Dodatkowo proszę porównać te wyniki do Państwa wyników z A oraz B i zastanowić się która implementacja jest lepsza i w jakiej sytuacji.
