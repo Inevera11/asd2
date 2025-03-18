@@ -8,7 +8,7 @@
 #include <sstream>
 
 #define STR_SIZE 50
-#define MAX_SIZE 200
+#define MAX_SIZE 1000
 
 class SimpleDict
 {
