@@ -34,7 +34,7 @@ void test_operations()
     for (int i = 0; i < NUM_REPEATS; i++)
     {
         SimpleDict A;
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < i; j++)
         {
             A.push("Element " + std::to_string(j));
         }
@@ -59,9 +59,32 @@ void test_operations()
     results_file.close();
 }
 
+void test_correctness()
+{
+    SimpleDict A;
+    std::cout << "Testing correctness of operations:\n";
+    A.display();
+    A.push("Test Element");
+    std::cout << "Push\n";
+    A.display();
+    if (A.includes("Test Element"))
+        std::cout << "Push and Includes: PASS\n";
+    else
+        std::cout << "Push and Includes: FAIL\n";
+
+    A.pop("Test Element");
+    std::cout << "Pop\n";
+    A.display();
+    if (!A.includes("Test Element"))
+        std::cout << "Pop: PASS\n";
+    else
+        std::cout << "Pop: FAIL\n";
+}
+
 int main()
 {
     test_operations();
     system("gnuplot plot.gnu");
+    test_correctness();
     return 0;
 }

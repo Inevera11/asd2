@@ -1,0 +1,5 @@
+5 kubełków
+każdy ma index (0,4)
+chcąc wrzucić 7, bierzemt 7%5=2
+7 wsadzamy do 2 kubełka
+W każdym kubełku mamy doczepioną strukturę danych setLinked
