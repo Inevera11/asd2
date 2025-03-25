@@ -1,3 +1,10 @@
+Implementacja zbioru wykorzystująca jednowymiarowe tablice o skończonym rozmiarze z zadania A w zestawie 1 zakłada, że każdemu elementowi zbioru można przypisać liczbę naturalną. Proszę zaimplementować funkcje implementujące takie przyporządkowanie dla zbiorów:
+
+-   liczb całkowitych $n,n+1,n+2,...,m$, gdzie $n<m$
+-   liczb całkowitych $n,n+2,n+4,...,m$, gdzie $n<m$
+-   liter $a,b,c,...,z$ bez polskich znaków $ęóąśłżźć$
+-   dwuliterowych napisów, gdzie każda litera jest z zakresu $a-z$ bez polskich znaków ęóąśłżźć
+
 Zaimplementować 2 funkcje:
 
 -   mapującą

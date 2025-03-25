@@ -1,3 +1,28 @@
+Proszę zaimplementować typ danych setHashed reprezentujący matematyczny zbiór oraz 
+operacje które dla dwóch zbiorów A,B realizują:
+
+-sumę zbiorów 
+-część wspólną zbiorów 
+-różnicę zbiorów 
+-sprawdzanie identyczności zbiorów 
+
+oraz dla elementu x i zbioru A realizują:
+
+- wstawianie x do zbioru A 
+- usuwanie x ze zbioru A
+- sprawdzanie czy x należy do A
+
+Tym razem proszę wykrzystać haszowanie otwarte. 
+Państwa implementację proszę wykorzystać w programie, 
+który bada złożoność obliczeniową poszczególnych operacji. 
+
+Dla każdej z zaimplementowanych operacji program powinien produkować jeden plik, 
+który może być uruchomiony z wykorzystaniem programu gnuplot. 
+
+W wiadomości e-mail proszę opisać podejście wykorzystane do badania złożoności obliczeniowej 
+i skonfrontować Państwa wyniki z wartościami teoretycznymi.
+
+
 5 kubełków
 każdy ma index (0,4)
 chcąc wrzucić 7, bierzemt 7%5=2
