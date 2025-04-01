@@ -5,7 +5,7 @@ set multiplot layout 2,2 title "Porównanie operacji" font ",14"
 
 # First plot
 set title "Średni czas wykonywania operacji push"
-set xlabel "Numer testu"
+set xlabel "Liczba elementów"
 set ylabel "Czas (μs)"
 plot "elements.dat" using 1:2 with linespoints title "1" lc rgb "#1f77b4", \
      "elements.dat" using 1:5 with linespoints title "500" lc rgb "#ff7f0e", \
@@ -13,7 +13,7 @@ plot "elements.dat" using 1:2 with linespoints title "1" lc rgb "#1f77b4", \
 
 # Second plot
 set title "Średni czas wykonywania operacji include"
-set xlabel "Numer testu"
+set xlabel "Liczba elementów"
 set ylabel "Czas (μs)"
 plot "elements.dat" using 1:3 with linespoints title "1" lc rgb "#d62728", \
      "elements.dat" using 1:6 with linespoints title "500" lc rgb "#9467bd", \
@@ -21,7 +21,7 @@ plot "elements.dat" using 1:3 with linespoints title "1" lc rgb "#d62728", \
 
 # Third plot
 set title "Średni czas wykonywania operacji pop"
-set xlabel "Numer testu"
+set xlabel "Liczba elementów"
 set ylabel "Czas (μs)"
 plot "elements.dat" using 1:4 with linespoints title "1" lc rgb "#d62728", \
      "elements.dat" using 1:7 with linespoints title "500" lc rgb "#9467bd", \
