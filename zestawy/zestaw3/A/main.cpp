@@ -67,12 +67,12 @@ void measure_time_complexity()
         auto start = high_resolution_clock::now();
         pq.insert(rand());
         auto end = high_resolution_clock::now();
-        auto insert_time = (end - start).count();
+        auto insert_time = duration_cast<nanoseconds>(end - start).count();
 
         start = high_resolution_clock::now();
         pq.pop_min();
         end = high_resolution_clock::now();
-        auto pop_time = (end - start).count();
+        auto pop_time = duration_cast<nanoseconds>(end - start).count();
 
         // add another element in place popped one
         pq.insert(rand());
