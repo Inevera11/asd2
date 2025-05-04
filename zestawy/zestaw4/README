@@ -1,0 +1,14 @@
+Proszę zaimplementować ADT graph, który dla grafu G oraz wierzchołków x,y ma implementacje następujących operacji:
+
+-   adjacent(x,y) - sprawdzanie, czy istnieje krawędź pomiędzy x a y
+-   neighbours(x) - zwracja sąsiadów x
+-   addVertex(x) - dodaje wierzchołek x
+-   removeVertex(x) - usuwa wierzchołek x
+-   addEdge(x,y) - dodaje krawędź między x a y
+-   removeEdge(x,y) - usuwa krawędź między x a y
+-   getVertexValue(x) - zwraca wartość skojarzoną z x
+-   setVertexValue(x) - kojarzy vartość z wierchołkiem x
+-   getEdgeValue(x,y) - zwraca wartość skojarzoną z krawędzią pomiędzy x a y
+-   setEdgeValue(x,y) - ustawia wartość skojarzoną z krawędzią pomiędzy x a y
+
+Państwa implementację proszę, na początek, oprzeć ma macierzy połączeń. Dodatkowo proszę zbadać złożoność jednej wybranej operacji
