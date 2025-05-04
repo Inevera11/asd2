@@ -96,7 +96,7 @@ int main()
 {
     srand(time(0));
     // test_push_and_pop_min();
-    measure_time_complexity();
-    system("gnuplot plot.gnu");
+    // measure_time_complexity();
+    // system("gnuplot plot.gnu");
     return 0;
 }
