@@ -57,7 +57,7 @@ void measure_time_complexity()
 
     int EL_COUNT = 1000;
     int STEP = 300;
-    const int REPEATS = 100;
+    const int REPEATS = 5;
 
     Graph<string, int> g;
 
@@ -102,7 +102,7 @@ void measure_time_complexity()
 int main()
 {
     test_graph();
-    // measure_time_complexity();
-    // system("gnuplot plot.gnu");
+    measure_time_complexity();
+    system("gnuplot plot.gnu");
     return 0;
 }
