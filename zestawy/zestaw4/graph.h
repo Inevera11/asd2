@@ -4,34 +4,43 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-#include <unordered_set>
 #include <cassert>
 
 template <typename T, typename E>
 class Graph
 {
 private:
-    std::unordered_map<int, T> vertex_values;
-    std::unordered_map<int, std::unordered_map<int, E>> edge_values;
-    std::unordered_map<int, std::unordered_set<int>> adjacency_list;
+    std::unordered_map<int, T> vertex_values;     // Wartości wierzchołków
+    std::unordered_map<int, int> vertex_index;    // Mapowanie wierzchołków na indeksy w macierzy
+    std::vector<std::vector<E>> adjacency_matrix; // Macierz połączeń
+    int vertex_count = 0;                         // Liczba wierzchołków
+
+    int getVertexIndex(int x) const
+    {
+        assert(vertex_index.count(x)); // Sprawdzamy, czy wierzchołek istnieje w grafie
+        return vertex_index.at(x);
+    }
 
 public:
     // Sprawdza, czy istnieje krawędź między x a y
     bool adjacent(int x, int y) const
     {
-        auto it = adjacency_list.find(x);
-        return it != adjacency_list.end() && it->second.count(y) > 0;
+        int i = getVertexIndex(x);
+        int j = getVertexIndex(y);
+        return adjacency_matrix[i][j] != E(); // Sprawdzamy, czy krawędź istnieje
     }
 
     // Zwraca sąsiadów wierzchołka x
     std::vector<int> neighbours(int x) const
     {
         std::vector<int> result;
-        if (adjacency_list.count(x))
+        int i = getVertexIndex(x);
+
+        for (int j = 0; j < vertex_count; ++j)
         {
-            for (int neighbor : adjacency_list.at(x))
+            if (adjacency_matrix[i][j] != E()) // Jeśli istnieje krawędź
             {
-                result.push_back(neighbor);
+                result.push_back(j);
             }
         }
         return result;
@@ -40,25 +49,43 @@ public:
     // Dodaje wierzchołek x
     void addVertex(int x)
     {
-        if (!adjacency_list.count(x))
+        if (vertex_index.count(x))
+            return; // Wierzchołek już istnieje
+
+        vertex_index[x] = vertex_count;
+        vertex_values[x] = T(); // Przypisanie domyślnej wartości
+
+        // Powiększamy macierz połączeń
+        for (auto &row : adjacency_matrix)
         {
-            adjacency_list[x] = {};
+            row.push_back(E()); // Dodajemy kolumnę
         }
+        adjacency_matrix.push_back(std::vector<E>(vertex_count + 1, E())); // Dodajemy nowy wiersz
+        ++vertex_count;
     }
 
     // Usuwa wierzchołek x
     void removeVertex(int x)
     {
-        adjacency_list.erase(x);
-        vertex_values.erase(x);
-        edge_values.erase(x);
+        int idx = getVertexIndex(x);
 
-        // Usuń odniesienia do x z innych wierzchołków
-        for (auto &[v, neighbors] : adjacency_list)
+        // Usuwamy wiersz i kolumnę
+        adjacency_matrix.erase(adjacency_matrix.begin() + idx);
+        for (auto &row : adjacency_matrix)
         {
-            neighbors.erase(x);
-            edge_values[v].erase(x);
+            row.erase(row.begin() + idx);
         }
+
+        vertex_index.erase(x);
+        vertex_values.erase(x);
+
+        // Przesuwamy indeksy
+        for (auto &entry : vertex_index)
+        {
+            if (entry.second > idx)
+                entry.second--;
+        }
+        --vertex_count;
     }
 
     // Dodaje krawędź między x a y
@@ -66,19 +93,17 @@ public:
     {
         addVertex(x);
         addVertex(y);
-        adjacency_list[x].insert(y);
-        adjacency_list[y].insert(x);
-        edge_values[x][y] = value;
-        edge_values[y][x] = value;
+        int i = getVertexIndex(x);
+        int j = getVertexIndex(y);
+        adjacency_matrix[i][j] = value;
     }
 
     // Usuwa krawędź między x a y
     void removeEdge(int x, int y)
     {
-        adjacency_list[x].erase(y);
-        adjacency_list[y].erase(x);
-        edge_values[x].erase(y);
-        edge_values[y].erase(x);
+        int i = getVertexIndex(x);
+        int j = getVertexIndex(y);
+        adjacency_matrix[i][j] = E(); // Usuwamy krawędź (ustawiamy domyślną wartość)
     }
 
     // Zwraca wartość skojarzoną z wierzchołkiem x
@@ -97,16 +122,17 @@ public:
     // Zwraca wartość skojarzoną z krawędzią x-y
     E getEdgeValue(int x, int y) const
     {
-        assert(edge_values.count(x) && edge_values.at(x).count(y));
-        return edge_values.at(x).at(y);
+        int i = getVertexIndex(x);
+        int j = getVertexIndex(y);
+        return adjacency_matrix[i][j];
     }
 
     // Ustawia wartość skojarzoną z krawędzią x-y
     void setEdgeValue(int x, int y, const E &value)
     {
-        assert(adjacent(x, y));
-        edge_values[x][y] = value;
-        edge_values[y][x] = value; // nieskierowany graf
+        int i = getVertexIndex(x);
+        int j = getVertexIndex(y);
+        adjacency_matrix[i][j] = value;
     }
 };
 
