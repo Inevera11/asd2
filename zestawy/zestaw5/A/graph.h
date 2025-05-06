@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <cassert>
+#include <fstream>
 
 template <typename T, typename E>
 class Graph
@@ -104,14 +105,30 @@ public:
         edge_values[x][y] = value;
     }
 
-    std::vector<std::pair<int, T>> getAllVertecsWithValues() const
+    void exportToDotFile(const std::string &filename) const
     {
-        std::vector<std::pair<int, T>> result;
-        for (const auto &[vertex, value] : vertex_values)
+        std::ofstream file(filename);
+        if (!file)
         {
-            result.emplace_back(vertex, value);
+            std::cerr << "Error opening file: " << filename << std::endl;
+            return;
         }
-        return result;
+
+        file << "digraph G {\n";
+
+        for (const auto &[from, neighbors] : adjacency_list)
+        {
+            const T &from_label = vertex_values.at(from);
+            for (int to : neighbors)
+            {
+                const T &to_label = vertex_values.at(to);
+                const E &edge_label = edge_values.at(from).at(to);
+                file << "    \"" << from_label << "\" -> \"" << to_label << "\" [label=" << edge_label << "];\n";
+            }
+        }
+
+        file << "}\n";
+        file.close();
     }
 };
 
