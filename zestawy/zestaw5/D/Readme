@@ -1,0 +1,5 @@
+Proszę się zastanowić jak wykorzystać reprezentację grafową do rozwiązania problemu znalezienia minimalnej liczby “faz” sygnalizacji świetlnej na skrzyżowaniu (strzałeczki oznaczają ulice jednokierunkowe):
+
+<img src="./crossroad.png">
+
+Sygnalizacja świetlna w każdej “fazie” powinna zezwalać na ruch przez skrzyżowanie jedynie tym samochodom, których trajektorie nie będą się przecinać. Aby usprawnić działanie skrzyżowania, liczba tych etapów powinna być jak najmniejsza.

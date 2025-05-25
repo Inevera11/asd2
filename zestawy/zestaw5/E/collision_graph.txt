@@ -1,0 +1,112 @@
+strict graph G {
+node [colorscheme=dark28]
+    "ED" [color=4]
+    "EC" [color=5]
+    "EB" [color=5]
+    "EA" [color=5]
+    "DC" [color=2]
+    "DB" [color=4]
+    "DA" [color=4]
+    "BD" [color=2]
+    "BC" [color=3]
+    "BA" [color=1]
+    "AD" [color=1]
+    "AC" [color=1]
+    "AB" [color=1]
+    "ED" -- "AB";
+    "ED" -- "BD";
+    "ED" -- "AC";
+    "ED" -- "AD";
+    "ED" -- "BC";
+    "EC" -- "AB";
+    "EC" -- "BD";
+    "EC" -- "AC";
+    "EC" -- "BC";
+    "EC" -- "DA";
+    "EC" -- "AD";
+    "EC" -- "DB";
+    "EC" -- "DC";
+    "EB" -- "AB";
+    "EB" -- "BD";
+    "EB" -- "AC";
+    "EB" -- "BC";
+    "EB" -- "DA";
+    "EB" -- "AD";
+    "EB" -- "DB";
+    "EB" -- "DC";
+    "EA" -- "AB";
+    "EA" -- "AC";
+    "EA" -- "AD";
+    "EA" -- "BA";
+    "EA" -- "BC";
+    "EA" -- "BD";
+    "EA" -- "DA";
+    "EA" -- "DB";
+    "EA" -- "DC";
+    "DC" -- "BC";
+    "DC" -- "EA";
+    "DC" -- "EB";
+    "DC" -- "AC";
+    "DC" -- "AB";
+    "DC" -- "EC";
+    "DB" -- "BD";
+    "DB" -- "BC";
+    "DB" -- "EA";
+    "DB" -- "EB";
+    "DB" -- "AC";
+    "DB" -- "AB";
+    "DB" -- "EC";
+    "DA" -- "BD";
+    "DA" -- "AC";
+    "DA" -- "BA";
+    "DA" -- "BC";
+    "DA" -- "EA";
+    "DA" -- "EB";
+    "DA" -- "AB";
+    "DA" -- "EC";
+    "BD" -- "AD";
+    "BD" -- "DA";
+    "BD" -- "EA";
+    "BD" -- "EB";
+    "BD" -- "AB";
+    "BD" -- "EC";
+    "BD" -- "DB";
+    "BD" -- "AC";
+    "BD" -- "ED";
+    "BC" -- "AD";
+    "BC" -- "DA";
+    "BC" -- "DB";
+    "BC" -- "DC";
+    "BC" -- "EA";
+    "BC" -- "EB";
+    "BC" -- "AB";
+    "BC" -- "EC";
+    "BC" -- "AC";
+    "BC" -- "ED";
+    "BA" -- "DA";
+    "BA" -- "EA";
+    "AD" -- "BC";
+    "AD" -- "EA";
+    "AD" -- "BD";
+    "AD" -- "EB";
+    "AD" -- "EC";
+    "AD" -- "ED";
+    "AC" -- "BC";
+    "AC" -- "BD";
+    "AC" -- "DA";
+    "AC" -- "DB";
+    "AC" -- "DC";
+    "AC" -- "EA";
+    "AC" -- "EB";
+    "AC" -- "EC";
+    "AC" -- "ED";
+    "AB" -- "DC";
+    "AB" -- "BC";
+    "AB" -- "BD";
+    "AB" -- "DA";
+    "AB" -- "EA";
+    "AB" -- "EB";
+    "AB" -- "EC";
+    "AB" -- "DB";
+    "AB" -- "ED";
+}

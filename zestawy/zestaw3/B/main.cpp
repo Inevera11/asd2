@@ -95,7 +95,7 @@ void measure_time_complexity()
 int main()
 {
     srand(time(0));
-    // test_push_and_pop_min();
+    test_push_and_pop_min();
     // measure_time_complexity();
     // system("gnuplot plot.gnu");
     return 0;
