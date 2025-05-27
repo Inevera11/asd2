@@ -1,0 +1,33 @@
+Robimy naleśniki. Składniki są następujące:
+
+- jajko
+
+- łyżka oleju
+
+ 
+- szklanki mleka
+
+- szklanka proszku do naleśników
+
+- syrop klonowy
+
+- patelnia
+
+Abu zrobić naleśniki należy:
+
+- nagrzać patelnię
+
+- zmieszać jajko, olej, mleko i proszek do naleśników
+
+- wylać część ciasta naleśnikowego na gorącą patelnię
+
+- gdy naleśnik jest rumiany od spodu należy przewrócić i podpiec z drugiej strony
+
+- podgrzać syrop klonowy
+
+- zjeść rumiany (z obydwu stron) naleśnik polany ciepłym syropem klonowym
+
+Proszę zareprezentować ten proces w postaci grafu 
+. Następnie proszę napisać program, który na podstawie grafu 
+ decyduje o kolejności wykonywanych czynności kulinarnych. Proszę uogólnić swój program, tak aby przyjmował dowolny graf 
+.
